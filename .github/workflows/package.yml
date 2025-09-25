@@ -1,0 +1,40 @@
+name: Package
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  package:
+    name: Package files
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Download .dll file
+        run: wget https://github.com/T2PeNBiX99wcoxKv3A4g/HKS-NoClip/releases/latest/download/HKS-NoClip.dll
+      
+      - name: Download `CHANGELOG.md` file
+        run: wget https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/HKS-NoClip/refs/heads/master/CHANGELOG.md
+
+      - name: Download `README.md` file
+        run: wget https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/HKS-NoClip/refs/heads/master/README.md
+      
+      - name: Download `LICENSE` file
+        run: wget https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/HKS-NoClip/refs/heads/master/LICENSE
+
+      - name: Create Archive
+        uses: thedoctor0/zip-release@0.7.6
+        with:
+          type: 'zip'
+          filename: 'HKSNoClipPackage.zip'
+          exclusions: '*.git* /*node_modules/* .editorconfig /*.idea/* .gitignore'
+          directory: .
+
+      - name: capture build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Artifacts
+          path: HKSNoClipPackage.zip

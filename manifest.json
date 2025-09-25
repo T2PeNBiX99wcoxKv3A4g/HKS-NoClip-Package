@@ -1,0 +1,10 @@
+{
+  "name": "HKS_NoClip",
+  "version_number": "0.0.1",
+  "website_url": "https://github.com/T2PeNBiX99wcoxKv3A4g/HKS-NoClip",
+  "description": "Very simple mod press b key toggle noclip",
+  "dependencies": [
+    "BepInEx-BepInExPack_Silksong-5.4.2303",
+    "ykysnk-BepinExUtils-0.0.10"
+  ]
+}
