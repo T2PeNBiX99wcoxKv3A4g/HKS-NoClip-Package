@@ -5,6 +5,6 @@
   "description": "Very simple mod press b key toggle noclip, Compatible with controller.",
   "dependencies": [
     "BepInEx-BepInExPack_Silksong-5.4.2303",
-    "ykysnk-BepinExUtils-0.0.10"
+    "ykysnk-BepinExUtils-0.0.11"
   ]
 }
